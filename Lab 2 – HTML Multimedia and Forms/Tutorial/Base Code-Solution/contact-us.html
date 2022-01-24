@@ -3,14 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
 </head>
 <body>
-<h1>Contact Us</h1>
-<a href="index.html">Home</a>
-
+<header>
+    <h1>Contact Us</h1>
+    <a href="index.html">Home</a>
+</header>
+<br>
+<br>
 <main>
+    <h2>Form</h2>
     <form action="#">
-        <input type="text">
+        <fieldset>
+            <legend>Fill this form</legend>
+            <div>
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <br>
+            <div>
+                <label for="age">Age</label>
+                <input type="number" name="age" id="age">
+            </div>
+            <br>
+
+            <div>
+                <label for="">Gender</label>
+                <label for="">Male</label>
+                <input type="radio" name="gender" value="male">
+                <label for="">Female</label>
+                <input type="radio" name="gender" value="female">
+
+            </div>
+            <br>
+
+            <div>
+                <label for="">Hobbies</label>
+                <label for="">Football</label>
+                <input type="checkbox" name="hobbies" value="Football">
+                <label for="">Movies</label>
+                <input type="checkbox" name="hobbies" value="Movies">
+
+            </div>
+            <br>
+            <div>
+                <label for="">Rate our service</label>
+                <select name="rating" id="">
+                    <option value="excellent">Excellent</option>
+                    <option value="very good">Very Good</option>
+                    <option value="good">Good</option>
+                    <option value="bad">Bad</option>
+                </select>
+            </div>
+            <br>
+            <label for="">Message</label><br>
+            <textarea name="" id="" cols="80" rows="20"></textarea>
+        </fieldset>
+        <div>
+            <input type="submit">
+            <input type="reset">
+        </div>
     </form>
 </main>
 
