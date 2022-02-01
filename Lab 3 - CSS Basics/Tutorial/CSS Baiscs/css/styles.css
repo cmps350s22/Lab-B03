@@ -55,6 +55,33 @@ footer h2{
     font-size: 1rem;
 }
 
+@media screen and (min-width: 40rem) {
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+        flex-grow: 1;
+        border: 1px solid black;
+        height: 400px;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    /*li{*/
+    /*    flex: 1;*/
+    /*    border: 1px white solid;*/
+    /*}*/
 
+    .first{
+        background-color: blue;
+    }
+    .second{
+        background-color: black;
+    }
+    .third{
+
+    }
+    .fourth{
+
+    }
+}
 
 
