@@ -17,14 +17,32 @@ body {
 .container {
     height: 100%;
     background-color: darkred;
+    display: grid;
+    grid-template-rows: 0.15fr  0.2fr auto 0.1fr;
 }
 
 /*Header*/
-
+header{
+    background-color: blue;
+}
 /*Nav*/
+nav{
+    background-color: yellowgreen;
+}
 
 /*Main*/
+main{
+    background-color: red;
+}
+
+.sub-img{
+    width: 200px;
+    height: 200px;
+}
 
 /*Footer*/
+footer{
+    background-color: orchid;
+}
 
 /*Handle different screen sizes*/
