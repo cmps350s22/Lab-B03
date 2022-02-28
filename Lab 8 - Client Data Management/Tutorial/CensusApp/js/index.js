@@ -1,5 +1,6 @@
 import {CensusRepo} from "./repository/census-repo.js";
 
+let isUpdate = false;
 const repo = new CensusRepo()
 
 const noOfRowsDD = document.querySelector('#noOfRows')
@@ -7,7 +8,7 @@ const addBtn = document.querySelector('#add-btn')
 const countriesTable = document.querySelector('#countries')
 const form = document.querySelector('#form')
 
-form.addEventListener('submit', addCensus)
+form.addEventListener('submit', submitCensus)
 noOfRowsDD.addEventListener('change', showCensusList)
 
 //when my window loads display all the countries inside the countriesTable
@@ -48,18 +49,20 @@ async function updateCensus(id){
     document.querySelector('#country').value = census.country
     document.querySelector('#population').value = census.population
     addBtn.value = 'Update'
+    isUpdate = true
 }
 
 
-async function addCensus(e) {
+async function submitCensus(e) {
     e.preventDefault()
     const census = formToObject(e.target)
     form.reset()
 
     //when i reach here, I want to differentiate between the add and the update
-    if(addBtn.value == 'Update'){
+    if(isUpdate){
         await repo.updateCensus(census)
         addBtn.value = 'Add'
+        isUpdate = false;
     }else{
         census.id = Date.now().toString()
         await repo.addCensus(census)
