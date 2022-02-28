@@ -32,7 +32,10 @@ export class CensusRepo {
     }
     getAllCensus(noOfRowsDD){
         try {
-            return db.collection('census').limit(noOfRowsDD).get()
+            return db
+                .collection('census')
+                .limit(noOfRowsDD)
+                .get()
         } catch (e) {
             console.log(e)
         }
