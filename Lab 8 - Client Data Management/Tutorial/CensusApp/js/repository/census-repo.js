@@ -16,7 +16,6 @@ export class CensusRepo {
             console.log(e)
         }
     }
-
     deleteCensus(id) {
         try {
             return db.collection('census').doc({id}).delete()
@@ -31,9 +30,9 @@ export class CensusRepo {
             console.log(e)
         }
     }
-    getAllCensus(){
+    getAllCensus(noOfRowsDD){
         try {
-            return db.collection('census').get()
+            return db.collection('census').limit(noOfRowsDD).get()
         } catch (e) {
             console.log(e)
         }
