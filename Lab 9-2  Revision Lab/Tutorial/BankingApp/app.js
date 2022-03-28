@@ -16,31 +16,14 @@
     => nodemon
  */
 import express from 'express';
+import router from './router.js'
 
 const app = express()
-
-//every app run on specific port number
-//Godaddy
 const port = process.env.PORT || 4000
 
-//first route
-app.get('/api/accounts', getAccounts)
-app.post('/api/accounts', addAccount)
-app.delete('/api/accounts', deleteAccount)
-app.put('/api/accounts', updateAccount)
-
-function getAccounts(req, res) {
-    res.send('Welcome to get accounts route')
-}
-function addAccount(req, res) {
-    res.send('Welcome to add a single account route')
-}
-function deleteAccount(req, res) {
-    res.send('Welcome to delete a single account route')
-}
-function updateAccount(req, res) {
-    res.send('Welcome to update a single account route')
-}
+//Middleware
+app.use(express.json())
+app.use('/api', router)
 
 app.listen(port, () => {
     console.log(`server listening on http://localhost:${port}`)

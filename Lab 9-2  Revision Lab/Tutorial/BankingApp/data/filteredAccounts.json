@@ -1,0 +1,12 @@
+[
+  {
+    "accountNo": 1101,
+    "acctType": "Current",
+    "balance": 500
+  },
+  {
+    "accountNo": 1102,
+    "acctType": "Current",
+    "balance": 500
+  }
+]

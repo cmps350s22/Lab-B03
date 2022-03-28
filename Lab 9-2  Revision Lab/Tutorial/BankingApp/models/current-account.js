@@ -2,9 +2,9 @@ import BankAccount from './bank-account.js'
 
 export default class CurrentAccount extends BankAccount {
 
-    constructor(accountNo, acctType, balance, monthlyFee) {
+    constructor(accountNo, acctType, balance) {
         super(accountNo, acctType, balance);
-        this.monthlyFee = monthlyFee;
+        this.monthlyFee = 15;
     }
 
     deductFee() {

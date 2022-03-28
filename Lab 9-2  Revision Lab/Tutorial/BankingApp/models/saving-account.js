@@ -1,9 +1,9 @@
 import BankAccount from './bank-account.js'
 
 export default class SavingAccount extends BankAccount {
-    constructor(accountNo, acctType, balance, minimumBalance) {
+    constructor(accountNo, acctType, balance) {
         super(accountNo, acctType, balance);
-        this.minimumBalance = minimumBalance;
+        this.minimumBalance = 1000;
     }
 
     addBenefit(benefitRate) {
