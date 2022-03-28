@@ -48,4 +48,12 @@ export default class AccountService {
         }
     }
 
+    async addTransaction(req, res) {
+        try {
+             const response = await accountRepo.addTransaction(req.body)
+            res.json(response)
+        } catch (e) {
+            res.status(500).send(e)
+        }
+    }
 }

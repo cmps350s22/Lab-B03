@@ -6,9 +6,11 @@ const accountService = new AccountService()
 
 router.get('/accounts', accountService.getAccounts)
 router.post('/accounts', accountService.addAccount)
-router.delete('/accounts', accountService.deleteAccount)
 router.put('/accounts', accountService.updateAccount)
 
+router.delete('/accounts/:acctNo', accountService.deleteAccount)
 router.get('/accounts/:acctNo', accountService.getAccount)
+
+router.post('/accounts/:acctNo/trans', accountService.addTransaction)
 
 export default router
