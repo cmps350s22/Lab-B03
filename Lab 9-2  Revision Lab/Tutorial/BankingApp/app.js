@@ -16,12 +16,15 @@
     => nodemon
  */
 import express from 'express';
+import morgan from 'morgan'
 import router from './router.js'
 
 const app = express()
 const port = process.env.PORT || 4000
 
 //Middleware
+app.use(express.static('public'))
+app.use(morgan('tiny'))
 app.use(express.json())
 app.use('/api', router)
 
