@@ -1,5 +1,6 @@
 import Account from "../model/account.js";
 import Transaction from "../model/account-trans.js";
+import account from "../model/account.js";
 
 export default class AccountRepo {
 
@@ -26,17 +27,10 @@ export default class AccountRepo {
     async updateAccount(account) {
         return Account.findByIdAndUpdate(account.acctNo, account)
     }
-
-    /*
-        {
-            acctNo: lkdjsaflkasdjf12312312
-            amount : 1000
-            transType : 'Withdaw/Deposit'
-        }
-     */
     async addTransaction(transaction) {
+
         transaction.amount = parseInt(transaction.amount.toString())
-        const account = this.getAccount(transaction.acctNo)
+        const account = await this.getAccount(transaction.acctNo)
 
         if(transaction.transType == 'Withdraw')
             account.balance -= transaction.amount
@@ -48,11 +42,25 @@ export default class AccountRepo {
     }
 
     async getTransactions() {
-        return Transaction.find()
+        return Transaction.find().populate('acctNo')
     }
 
     async getStats() {
-
+        return Account.aggregate(
+            [
+                {
+                    '$group': {
+                        '_id': '$acctType',
+                        'Total': {
+                            '$sum': '$balance'
+                        },
+                        'howManyAccount': {
+                            '$sum': 1
+                        }
+                    }
+                }
+            ]
+        )
     }
 
     async sumBalance() {
