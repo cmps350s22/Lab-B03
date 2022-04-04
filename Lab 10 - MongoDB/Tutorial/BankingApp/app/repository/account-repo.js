@@ -1,33 +1,54 @@
+import Account from "../model/account.js";
+import Transaction from "../model/account-trans.js";
+
 export default class AccountRepo {
 
     //Get account from accounts.json file
     getAccounts(acctType) {
-
+        if (acctType && acctType != 'All')
+            return Account.find({acctType})
+        return Account.find()
     }
 
     //Get account by accountNo
     getAccount(accountNo) {
-
+        return Account.findOne({_id: accountNo});
     }
 
     async addAccount(account) {
-
+        return await Account.create(account)
     }
 
     async deleteAccount(accountNo) {
-
+        return Account.deleteOne({_id: accountNo})
     }
 
     async updateAccount(account) {
-
+        return Account.findByIdAndUpdate(account.acctNo, account)
     }
 
+    /*
+        {
+            acctNo: lkdjsaflkasdjf12312312
+            amount : 1000
+            transType : 'Withdaw/Deposit'
+        }
+     */
     async addTransaction(transaction) {
+        transaction.amount = parseInt(transaction.amount.toString())
+        const account = this.getAccount(transaction.acctNo)
 
+        if(transaction.transType == 'Withdraw')
+            account.balance -= transaction.amount
+        else
+            account.balance += transaction.amount
+
+        await account.save()
+        return await Transaction.create(transaction)
     }
 
     async getTransactions() {
-
+        return Transaction.find()
     }
 
     async getStats() {

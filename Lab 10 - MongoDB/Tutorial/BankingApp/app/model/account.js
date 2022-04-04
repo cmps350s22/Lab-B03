@@ -31,8 +31,7 @@ accountSchema.virtual('monthlyFee').get(function () {
 })
 
 accountSchema.virtual('acctNo').get(function () {
-    if (this.acctType == "Current")
-        return this._id
+    return this._id
 })
 
 export default mongoose.model('Account', accountSchema)
