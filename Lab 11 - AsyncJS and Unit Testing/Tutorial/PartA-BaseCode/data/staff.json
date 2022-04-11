@@ -6,12 +6,7 @@
     "lastname": "Hayyan",
     "password": "password",
     "type": "Adviser",
-    "program": [
-      "AUP",
-      "CVE",
-      "CS",
-      "CE"
-    ]
+    "program": ["AUP", "CVE", "CS", "CE"]
   },
   {
     "staffNo": 2,
@@ -20,12 +15,7 @@
     "lastname": "Inestine",
     "password": "password",
     "type": "Adviser",
-    "program": [
-      "EE",
-      "CHE",
-      "ME",
-      "ISE"
-    ]
+    "program": ["EE", "CHE", "ME", "ISE"]
   },
   {
     "staffNo": 3,
