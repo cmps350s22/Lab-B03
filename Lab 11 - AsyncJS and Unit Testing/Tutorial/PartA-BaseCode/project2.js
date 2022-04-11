@@ -11,33 +11,41 @@ function getCourses(cb)
  */
 
 import fs from 'fs'
-function setInstructorNames(courses, cb){
-    fs.readFile('data/staff.json', (err, data)=>{
-        if(!err){
+
+function setStudentNames(courses , cb){
+    fs.readFile('data/student.json', (err, data) => {
+
+    })
+}
+function setInstructorNames(courses, cb) {
+    fs.readFile('data/staff.json', (err, data) => {
+        if (!err) {
             const staffs = JSON.parse(data)
             for (const course of courses) {
-
+                const {firstname, lastname} = staffs.find(staff => staff.staffNo == course.instructorId)
+                course.instructor = `${firstname} ${lastname}`
             }
-        }else{
-            cb(null, err)
+            setStudentNames(courses, cb)
+        } else {
+            cb(err, null)
         }
     })
 }
-function getCourses(cb) {
-    fs.readFile('data/course.json', (err, data)=>{
 
-        if(!err){
+function getCourses(cb) {
+    fs.readFile('data/course.json', (err, data) => {
+
+        if (!err) {
             const courses = JSON.parse(data)
             setInstructorNames(courses, cb)
             cb(null, courses)
-        }
-        else
+        } else
             cb(err, null)
     })
 }
 
-getCourses((err, data)=>{
-    if(!err)
+getCourses((err, data) => {
+    if (!err)
         console.log(data)
     else
         console.log(err)
