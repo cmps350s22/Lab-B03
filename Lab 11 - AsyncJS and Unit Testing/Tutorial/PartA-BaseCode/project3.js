@@ -5,7 +5,7 @@ import fs from 'fs-extra'
 */
 
 fs.readJson('data/course.json')
-    .then(courses => courses.map(course => course.crn))
+    .then(courses => courses.length)
     .then(crns=> console.log(crns))
     .catch(err => console.log(err))
 
