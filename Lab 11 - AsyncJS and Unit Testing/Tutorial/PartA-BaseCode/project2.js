@@ -10,3 +10,44 @@ function getCourses(cb)
 
  */
 
+
+
+import fs from 'fs'
+function setInstructorNames(courses, cb){
+    fs.readFile('data/staff.json', (err, data)=>{
+        if(!err){
+            const staffs = JSON.parse(data)
+            for (const course of courses) {
+
+            }
+        }else{
+            cb(null, err)
+        }
+    }
+}
+function getCourses(cb) {
+    fs.readFile('data/course.json', (err, data)=>{
+
+        if(!err){
+            const courses = JSON.parse(data)
+            setInstructorNames(courses, cb)
+            cb(null, courses)
+        }
+
+        else
+            cb(err, null)
+    })
+}
+
+getCourses((err, data)=>{
+    if(!err)
+        console.log(data)
+    else
+        console.log(err)
+})
+
+console.log('some more code of your app')
+console.log('some more code of your app')
+console.log('some more code of your app')
+console.log('some more code of your app')
+
