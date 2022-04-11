@@ -10,8 +10,6 @@ function getCourses(cb)
 
  */
 
-
-
 import fs from 'fs'
 function setInstructorNames(courses, cb){
     fs.readFile('data/staff.json', (err, data)=>{
@@ -23,7 +21,7 @@ function setInstructorNames(courses, cb){
         }else{
             cb(null, err)
         }
-    }
+    })
 }
 function getCourses(cb) {
     fs.readFile('data/course.json', (err, data)=>{
@@ -33,7 +31,6 @@ function getCourses(cb) {
             setInstructorNames(courses, cb)
             cb(null, courses)
         }
-
         else
             cb(err, null)
     })
