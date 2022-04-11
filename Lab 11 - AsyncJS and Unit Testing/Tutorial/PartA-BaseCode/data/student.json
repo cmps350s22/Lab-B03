@@ -1,7 +1,7 @@
 [
   {
     "studentId": 2015001,
-    "firstname": "Fn1",
+    "firstname": "Mohamed",
     "lastname": "Ln1",
     "gender": "M",
     "program": "ISE",
@@ -14,7 +14,7 @@
   },
   {
     "studentId": 2015002,
-    "firstname": "Fn2",
+    "firstname": "Ali",
     "lastname": "Ln2",
     "gender": "M",
     "program": "ISE",
@@ -27,7 +27,7 @@
   },
   {
     "studentId": 2015003,
-    "firstname": "Fn3",
+    "firstname": "Omar",
     "lastname": "Ln3",
     "gender": "F",
     "program": "AUP",
@@ -40,7 +40,7 @@
   },
   {
     "studentId": 2015004,
-    "firstname": "Fn4",
+    "firstname": "Abdulahi",
     "lastname": "Ln4",
     "gender": "M",
     "program": "ME",
@@ -53,7 +53,7 @@
   },
   {
     "studentId": 2015005,
-    "firstname": "Fn5",
+    "firstname": "Ezdiin",
     "lastname": "Ln5",
     "gender": "F",
     "program": "AUP",

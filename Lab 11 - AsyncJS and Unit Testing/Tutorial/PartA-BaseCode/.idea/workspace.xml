@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="f30a3f8b-a6b6-4938-80a5-5bcb0addb171" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/student.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/student.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project2.js" beforeDir="false" afterPath="$PROJECT_DIR$/project2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project3.js" beforeDir="false" afterPath="$PROJECT_DIR$/project3.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,9 +48,13 @@
     <configuration name="project2.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/project2.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
+    <configuration name="project3.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/project3.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Node.js.project2.js" />
+        <item itemvalue="Node.js.project3.js" />
         <item itemvalue="Node.js.project1.js" />
       </list>
     </recent_temporary>
@@ -60,7 +67,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1649697022016</updated>
-      <workItem from="1649697023382" duration="3417000" />
+      <workItem from="1649697023382" duration="4736000" />
     </task>
     <servers />
   </component>

@@ -12,11 +12,22 @@ function getCourses(cb)
 
 import fs from 'fs'
 
-function setStudentNames(courses , cb){
+function setStudentNames(courses, cb) {
     fs.readFile('data/student.json', (err, data) => {
-
+        if (!err) {
+            const students = JSON.parse(data)
+            for (const course of courses) {
+                course.students = students
+                    .filter(student => student.courseIds.includes(course.crn))
+                    .map(student => `${student.firstname} ${student.lastname}`)
+            }
+            cb(null, courses)
+        } else {
+            cb(err, null)
+        }
     })
 }
+
 function setInstructorNames(courses, cb) {
     fs.readFile('data/staff.json', (err, data) => {
         if (!err) {
@@ -50,9 +61,3 @@ getCourses((err, data) => {
     else
         console.log(err)
 })
-
-console.log('some more code of your app')
-console.log('some more code of your app')
-console.log('some more code of your app')
-console.log('some more code of your app')
-
