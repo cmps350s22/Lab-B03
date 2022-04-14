@@ -30,6 +30,7 @@ export default class EmployeeService {
             const response = await employeeRepo.updateEmployee(req.params.eid, req.body)
             res.json(response);
         } catch (e) {
+            console.log(e)
             res.status(500).send(e);
         }
     }
