@@ -27,6 +27,13 @@ export default class CourseService {
     /*
             TODO : add the service classes
      */
+    async renderIndex(req, res) {
+        try {
+            res.render('index')
+        } catch (e) {
+            res.send(500).send(e);
+        }
+    }
 
 }
 
