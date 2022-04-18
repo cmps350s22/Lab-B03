@@ -40,7 +40,7 @@ export default class CourseService {
     async renderCourses(req, res) {
         try {
             const programs = await courseRepository.getPrograms()
-            res.render('courses', {title: 'courses', programs})
+            res.render('courses', {title: 'courses', programs , show : true})
         } catch (e) {
             res.send(500).send(e);
         }

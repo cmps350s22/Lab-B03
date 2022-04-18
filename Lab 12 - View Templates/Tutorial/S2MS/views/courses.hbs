@@ -1,4 +1,22 @@
-<div class="mt-4 p-5 bg-primary text-white rounded">
-    <h1>CENG courses and Programs</h1>
-    <p>You can search for courses of each program under the Engineering college</p>
-</div>
+{{#if show}}
+    <div class="mt-4 p-5 bg-primary text-white rounded">
+        <h1>CENG courses and Programs</h1>
+        <p>You can search for courses of each program under the Engineering college</p>
+    </div>
+    <br>
+    <div>
+        <select name="programs" id="programs" class="form-control"
+                onchange="getCourses(this.value)">
+            <option value="" selected disabled>Select the Program from this dropdown</option>
+            {{#each programs}}
+                <option value="{{this.code}}">{{this.name}}</option>
+            {{/each}}
+        </select>
+
+        <div id="courses-area"></div>
+    </div>
+{{/if}}
+
+
+
+
